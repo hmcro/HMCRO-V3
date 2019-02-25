@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="50px" viewBox="0 0 17 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>person-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Favicons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="person-icon" fill="#FFFFFF">
+            <path d="M13.411,29.8703 L14.256,29.8703 C15.754,29.8703 16.967,28.5863 16.967,27.0883 L15.431,13.2393 C15.431,11.7423 14.216,10.3263 12.719,10.3263 L4.246,10.3263 C2.749,10.3263 1.536,11.7063 1.536,13.2043 L0,27.0053 C0,28.5023 1.215,29.8703 2.711,29.8703 L3.557,29.8703 L5.641,47.6303 C5.641,48.5423 6.383,49.4133 7.294,49.4133 L9.668,49.4133 C10.581,49.4133 11.321,48.5423 11.321,47.6303 L13.411,29.8703 Z" id="Fill-1"></path>
+            <path d="M8.4843,0.0002 C10.9943,0.0002 13.0293,2.0352 13.0293,4.5452 C13.0293,7.0562 10.9943,9.0912 8.4843,9.0912 C5.9733,9.0912 3.9383,7.0562 3.9383,4.5452 C3.9383,2.0352 5.9733,0.0002 8.4843,0.0002" id="Fill-4"></path>
+        </g>
+    </g>
+</svg>

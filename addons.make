@@ -1,0 +1,3 @@
+ofxHapInAVFoundationPlayer
+ofxOsc
+ofxSvg

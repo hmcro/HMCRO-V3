@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1080px" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #E9501E;">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>citizen-detected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Favicons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="48" font-family="AkzidenzGroteskStd-Bold, Akzidenz-Grotesk Std" font-weight="bold">
+        <g id="citizen-detected" fill="#FFFFFF">
+            <text id="Citizen-detected.-Co">
+                <tspan x="115" y="157">Citizen detected.</tspan>
+                <tspan x="115" y="212"></tspan>
+                <tspan x="115" y="267">Congratulations on your citizen application, </tspan>
+                <tspan x="115" y="322">your welcome video is being generated </tspan>
+                <tspan x="115" y="377">automatically based on your recorded data.</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
