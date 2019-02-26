@@ -78,66 +78,43 @@ void ofApp::update(){
     // check if the video has finished
     if ( videos[videosIndex].getIsMovieDone() ) {
         cout << "video finished = videosIndex:" << videosIndex << ", sequenceIndex:" << sequenceIndex << endl;
-        
         if (isSequencePlaying) {
             // a video in the sequence has finished
             // are there any more videos to play?
-            if ( sequenceIndex >= SEQUENCE_LENGTH-1 ) {
-                
+            if ( sequenceIndex >= SEQUENCE_LENGTH-1 ) { // if sequence is finished
                 if (numVisitorsChanged) {
-                    
                     // start playing again
-                    
                     // set the flag to false to record the current number of visitors
                     numVisitorsChanged = false;
-                    
                     // regenerate a new video sequence
                     generateVideoSequence();
-                    
                     // reset the index so the next video will be the first in the sequence
                     sequenceIndex = 0;
-                    
                     // play the first video in the sequence
                     playVideo(sequence[sequenceIndex]);
-                    
                     isSequenceAutomatic = false;
                     isSequencePlaying = true;
-                }
-                else {
-                    
+                } else {
                     // play the attractor
                     playVideo(0);
-                    
                     isSequencePlaying = false;
                 }
+            } else {
+                // increase the nPlaying number to the next video in the array
+                sequenceIndex++;
+                playVideo( sequence[sequenceIndex] );
             }
-            else {
-                // the attractor has finished
-                
-                // regenerate a new video sequence
-                generateVideoSequence();
-                
-                // reset the index so the next video will be the first in the sequence
-                sequenceIndex = 0;
-                
-                // play the first video in the sequence
-                playVideo(sequence[sequenceIndex]);
-                
-                isSequenceAutomatic = true;
-                isSequencePlaying = true;
-            }
-            
-            
-            
+        } else {
+            // the attractor has finished
+            // regenerate a new video sequence
+            generateVideoSequence();
+            // reset the index so the next video will be the first in the sequence
+            sequenceIndex = 0;
+            // play the first video in the sequence
+            playVideo(sequence[sequenceIndex]);
+            isSequenceAutomatic = true;
+            isSequencePlaying = true;
         }
-        else {
-            
-            // increase the nPlaying number to the next video in the array
-            sequenceIndex++;
-            
-            playVideo( sequence[sequenceIndex] );
-        }
-        
     }
     
     videos[videosIndex].update();
@@ -202,7 +179,7 @@ void ofApp::drawGFX(float x, float y, float w, float h){
         // just draw a circle
         ofPushStyle();
         ofSetColor(255,255,255);
-        ofDrawCircle(0, 0, 100);
+        ofDrawCircle(0, 0, 10);
         ofPopStyle();
         
     } else {
@@ -246,14 +223,15 @@ void ofApp::drawDebugInfo(int x, int y, int w, int h){
     string str = "VIDEO SEQUENCER";
     str += "\n\nA = attractor video";
     str += "\n\nS = skip to near end of attractor video";
-    str += "\n attractor duration = " + ofToString(videos[0].getTotalNumFrames());
-    str += "\n attractor position = " + ofToString(videos[0].getPosition());
+    str += "\nattractor duration = " + ofToString(videos[0].getTotalNumFrames());
+    str += "\nattractor position = " + ofToString(videos[0].getCurrentFrame());
+    str += "\nnumVisitorsChanged = " + ofToString(numVisitorsChanged);
+    str += "\nisSequenceAutomatic: " + ofToString(isSequenceAutomatic);
     str += "\nF = fullscreen";
     str += "\n+ = Add 1 visitor";
     str += "\n- = Remove 1 visitor";
     str += "\n\nisPlayingSequence: " + ofToString(isSequencePlaying);
     str += "\nSequence: ";
-    str += "\nisSequenceAutomatic: " + ofToString(isSequenceAutomatic);
     
     // output the sequence order and highlight the new video position
     for(int i = 0; i < SEQUENCE_LENGTH; i++) {
@@ -319,7 +297,7 @@ void ofApp::keyReleased(int key){
         
         isSequencePlaying = false;
         playVideo(0);
-        videos[0].setFrame(6000);
+        videos[0].setFrame(6200);
         
     }
     
@@ -492,3 +470,5 @@ void ofApp::exit() {
     
     cout << "\nBYE!";
 }
+
+
